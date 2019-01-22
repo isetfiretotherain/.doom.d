@@ -156,3 +156,9 @@
        ;; provides a Spacemacs-inspired keybinding scheme and a smartparens
        ;; config. Use it as a reference for your own modules.
        (default +bindings +smartparens))
+
+;; Personal additions here
+;; Org
+(setq org-log-done t
+      org-todo-keywords '((sequence "TODO" "INPROGRESS" "DONE"))
+      org-todo-keyword-faces '(("INPROGRESS" . (:foreground "blue" :weight bold))))
