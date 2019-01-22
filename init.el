@@ -163,5 +163,9 @@
       org-todo-keywords '((sequence "TODO" "INPROGRESS" "DONE"))
       org-todo-keyword-faces '(("INPROGRESS" . (:foreground "blue" :weight bold))))
 
+;; Word-wrapping defaults
 ;; tw=60
 (setq-default fill-column 60)
+
+;; Automatic wrapping
+(setq-default word-wrap t)
