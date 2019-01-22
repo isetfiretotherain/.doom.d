@@ -162,3 +162,6 @@
 (setq org-log-done t
       org-todo-keywords '((sequence "TODO" "INPROGRESS" "DONE"))
       org-todo-keyword-faces '(("INPROGRESS" . (:foreground "blue" :weight bold))))
+
+;; tw=60
+(setq-default fill-column 60)
