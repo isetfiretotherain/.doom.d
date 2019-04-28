@@ -159,9 +159,11 @@
 ;; export org to markdown
 (require 'ox-md)
 
+;; Word-wrapping defaults
 ;; tw=60
 (setq-default fill-column 60)
 
+<<<<<<< HEAD
 ;; company autocomplete
 (setq global-company-mode t
       company-idle-delay 0
@@ -190,3 +192,7 @@
 (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
 
 (require 'org-ref)
+=======
+;; Automatic wrapping
+(setq-default word-wrap t)
+>>>>>>> b9ffa3b1ce00464b44cea4f4d6915e488d2c1de5
