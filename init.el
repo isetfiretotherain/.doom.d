@@ -53,7 +53,7 @@
        :emacs
        (dired            ; making dired pretty [functional]
        ;;+ranger         ; bringing the goodness of ranger to dired
-       ;;+icons          ; colorful icons for dired-mode
+       +icons          ; colorful icons for dired-mode
         )
        electric          ; smarter, keyword-based electric-indent
        ;;eshell            ; a consistent, cross-platform shell (WIP)
@@ -112,7 +112,9 @@
         +babel           ; running code in org
         +capture         ; org-capture in and outside of Emacs
         +export          ; Exporting org to whatever you want
-        +present)        ; Emacs for presentations
+        +habit           ; Keep track of your habits
+        +present         ; Emacs for presentations
+        +protocol)       ; Support for org-protocol:// links
        ;;perl              ; write code no one else can comprehend
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
@@ -138,9 +140,10 @@
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought
-       (write)            ; emacs as a word processor (latex + org + markdown)
+       (write            ; emacs as a word processor (latex + org + markdown)
        ;; +wordnut         ; wordnet (wn) search
        ;; +langtool)       ; a proofreader (grammar/style check) for Emacs
+       )
 
        :collab
        ;;floobits          ; peer programming for a price
@@ -174,23 +177,23 @@
 ;; load dracula theme
 (load-theme 'doom-dracula t)
 
-;; org-ref
-(setq reftex-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"))
-
-;; see org-ref for use of these variables
-(setq org-ref-bibliography-notes "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/notes.org"
-      org-ref-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib")
-      org-ref-pdf-directory "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/pdf-dir/")
-
-(setq bibtex-completion-bibliography "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"
-      bibtex-completion-library-path "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/pdf-dir"
-      bibtex-completion-notes-path "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/helm-bibtex-notes")
-
-;; open pdf with system pdf viewer (works on mac)
-(setq bibtex-completion-pdf-open-function
-  (lambda (fpath)
-    (start-process "open" "*open*" "open" fpath)))
-
-(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
-
-(require 'org-ref)
+;;;; org-ref
+;;(setq reftex-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"))
+;;
+;;;; see org-ref for use of these variables
+;;(setq org-ref-bibliography-notes "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/notes.org"
+;;      org-ref-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib")
+;;      org-ref-pdf-directory "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/pdf-dir/")
+;;
+;;(setq bibtex-completion-bibliography "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"
+;;      bibtex-completion-library-path "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/pdf-dir"
+;;      bibtex-completion-notes-path "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/helm-bibtex-notes")
+;;
+;;;; open pdf with system pdf viewer (works on mac)
+;;(setq bibtex-completion-pdf-open-function
+;;  (lambda (fpath)
+;;    (start-process "open" "*open*" "open" fpath)))
+;;
+;;(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+;;
+;;(require 'org-ref)
