@@ -43,6 +43,7 @@
        window-select     ; visually switch windows
 
        :editor
+       fold              ; (nigh) universal code folding
        ;;(format +onsave)  ; automated prettiness
        ;;lispy             ; vim for lisp, for people who dont like vim
        multiple-cursors  ; editing in many places at once
@@ -54,12 +55,10 @@
        ;;+ranger         ; bringing the goodness of ranger to dired
        ;;+icons          ; colorful icons for dired-mode
         )
-       ediff             ; comparing files in Emacs
        electric          ; smarter, keyword-based electric-indent
        ;;eshell            ; a consistent, cross-platform shell (WIP)
-       hideshow          ; basic code-folding support
        imenu             ; an imenu sidebar and searchable code index
-       ;;term              ; terminals in Emacs
+       term              ; terminals in Emacs
        vc                ; version-control and Emacs, sitting in a tree
 
        :tools
@@ -69,8 +68,8 @@
        ;;ein               ; tame Jupyter notebooks with emacs
        ;;gist              ; interacting with github gists
        ;;macos             ; MacOS-specific commands
-       ;;make              ; run make tasks from Emacs
        magit             ; a git porcelain for Emacs
+       ;;make              ; run make tasks from Emacs
        ;;password-store    ; password manager for nerds
        pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
@@ -102,7 +101,7 @@
        ;;javascript        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        latex             ; writing papers in Emacs has never been so fun
-       ;;ledger            ; an accounting system in Emacs
+       ledger            ; an accounting system in Emacs
        ;;lua               ; one-based indices? one-based indices
        markdown          ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
@@ -139,7 +138,7 @@
        ;;irc               ; how neckbeards socialize
        ;;(rss +org)        ; emacs as an RSS reader
        ;;twitter           ; twitter client https://twitter.com/vnought
-       ;;(write            ; emacs as a word processor (latex + org + markdown)
+       (write)            ; emacs as a word processor (latex + org + markdown)
        ;; +wordnut         ; wordnet (wn) search
        ;; +langtool)       ; a proofreader (grammar/style check) for Emacs
 
@@ -157,11 +156,37 @@
        ;; config. Use it as a reference for your own modules.
        (default +bindings +smartparens))
 
-;; Personal additions here
-;; Org
-(setq org-log-done t
-      org-todo-keywords '((sequence "TODO" "INPROGRESS" "DONE"))
-      org-todo-keyword-faces '(("INPROGRESS" . (:foreground "blue" :weight bold))))
+;; export org to markdown
+(require 'ox-md)
 
 ;; tw=60
 (setq-default fill-column 60)
+
+;; company autocomplete
+(setq global-company-mode t
+      company-idle-delay 0
+      company-minimum-prefix-length 3)
+
+;; load dracula theme
+(load-theme 'doom-dracula t)
+
+;; org-ref
+(setq reftex-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"))
+
+;; see org-ref for use of these variables
+(setq org-ref-bibliography-notes "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/notes.org"
+      org-ref-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib")
+      org-ref-pdf-directory "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/pdf-dir/")
+
+(setq bibtex-completion-bibliography "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"
+      bibtex-completion-library-path "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/pdf-dir"
+      bibtex-completion-notes-path "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/helm-bibtex-notes")
+
+;; open pdf with system pdf viewer (works on mac)
+(setq bibtex-completion-pdf-open-function
+  (lambda (fpath)
+    (start-process "open" "*open*" "open" fpath)))
+
+(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+
+(require 'org-ref)
