@@ -164,7 +164,7 @@
 
 ;; Word-wrapping defaults
 ;; tw=60
-(setq-default fill-column 60)
+(setq-default fill-column 65)
 
 ;; Automatic wrapping
 (setq-default word-wrap t)
@@ -174,8 +174,18 @@
       company-idle-delay 0
       company-minimum-prefix-length 3)
 
+;; todo states in org-mode
+(setq org-todo-keywords
+   '((sequence "TODO(t!)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
+
+;; font
+(set-frame-font "Fira Code-10.5" nil t)
+
 ;; load dracula theme
-(load-theme 'doom-dracula t)
+(load-theme 'doom-nord t)
+
+;; return follow links
+(setq org-return-follows-link t)
 
 ;;;; org-ref
 ;;(setq reftex-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"))
