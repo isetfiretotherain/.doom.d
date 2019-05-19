@@ -179,7 +179,7 @@
    '((sequence "TODO(t!)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")))
 
 ;; font
-(set-frame-font "Fira Code-10.5" nil t)
+(set-frame-font "monospace-10" nil t)
 
 ;; load dracula theme
 (load-theme 'doom-nord t)
