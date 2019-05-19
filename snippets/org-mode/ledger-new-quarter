@@ -1,0 +1,78 @@
+# -*- mode: snippet -*-
+# name: ledger-new-quarter
+# key: quarter
+# --
+* Quarter
+
+**Notes:**
+** Balance: Income - Expense
+
+#+BEGIN_SRC ledger :cmdline bal Income Expenses :noweb yes
+<<1month19>>
+<<2month19>>
+<<3month19>>
+#+END_SRC
+
+** Balance: Assets + Funds - Liabilities
+
+#+BEGIN_SRC ledger :cmdline bal Assets Funds Liabilities :noweb yes
+<<1month19>>
+<<2month19>>
+<<3month19>>
+#+END_SRC
+
+** Register
+#+BEGIN_SRC ledger :cmdline register :noweb yes
+<<1month19>>
+<<2month19>>
+<<3month19>>
+
+#+END_SRC
+
+*** Cash-A
+#+BEGIN_SRC ledger :cmdline register Cash-A :noweb yes
+<<1month19>>
+<<2month19>>
+<<3month19>>
+
+#+END_SRC
+
+*** Cash-B
+#+BEGIN_SRC ledger :cmdline register Cash-B :noweb yes
+<<1month19>>
+<<2month19>>
+<<3month19>>
+
+#+END_SRC
+
+*** Funds
+#+BEGIN_SRC ledger :cmdline register Funds :noweb yes
+<<1month19>>
+<<2month19>>
+<<3month19>>
+
+#+END_SRC
+
+*** Cash-B + Funds
+#+BEGIN_SRC ledger :cmdline register Cash-B Funds :noweb yes
+<<1month19>>
+<<2month19>>
+<<3month19>>
+
+#+END_SRC
+
+*** BB-CC
+#+BEGIN_SRC ledger :cmdline register BB-CC :noweb yes
+<<1month19>>
+<<2month19>>
+<<3month19>>
+
+#+END_SRC
+
+*** Inter-CC
+#+BEGIN_SRC ledger :cmdline register Inter-CC :noweb yes
+<<1month19>>
+<<2month19>>
+<<3month19>>
+
+#+END_SRC

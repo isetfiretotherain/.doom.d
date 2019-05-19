@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: ledger-planned-cost
+# key: cost
+# --
+*** *cost*
+
+#+title: Expected costs for *cost*
+| Description |  Cost | Funded |   Paid |
+|-------------+-------+--------+--------|
+|             |       |        |        |
+|-------------+-------+--------+--------|
+| Total       | 1950. |   500. | 353.38 |
+#+TBLFM: @7$2=vsum(@2..@6)::@7$3=vsum(@2..@6)::@7$4=vsum(@2..@6)

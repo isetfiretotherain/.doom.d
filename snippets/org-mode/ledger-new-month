@@ -1,0 +1,59 @@
+# -*- mode: snippet -*-
+# name: ledger-new-month
+# key: month
+# --
+* model
+
+**Notes:**
+** Data
+
+#+Name: model19
+#+BEGIN_SRC ledger :noweb yes
+#+END_SRC
+
+** Balance: Income - Expense
+
+#+BEGIN_SRC ledger :cmdline bal Income Expenses :noweb yes
+<<model19>>
+#+END_SRC
+
+** Balance: Assets + Funds - Liabilities
+
+#+BEGIN_SRC ledger :cmdline bal Assets Funds Liabilities :noweb yes
+<<model19>>
+#+END_SRC
+
+** Register
+#+BEGIN_SRC ledger :cmdline register :noweb yes
+<<model19>>
+#+END_SRC
+
+*** Cash-A
+#+BEGIN_SRC ledger :cmdline register Cash-A :noweb yes
+<<model19>>
+#+END_SRC
+
+*** Cash-B
+#+BEGIN_SRC ledger :cmdline register Cash-B :noweb yes
+<<model19>>
+#+END_SRC
+
+*** Funds
+#+BEGIN_SRC ledger :cmdline register Funds :noweb yes
+<<model19>>
+#+END_SRC
+
+*** Cash-B + Funds
+#+BEGIN_SRC ledger :cmdline register Cash-B Funds :noweb yes
+<<model19>>
+#+END_SRC
+
+*** BB-CC
+#+BEGIN_SRC ledger :cmdline register BB-CC :noweb yes
+<<model19>>
+#+END_SRC
+
+*** Inter-CC
+#+BEGIN_SRC ledger :cmdline register Inter-CC :noweb yes
+<<model19>>
+#+END_SRC
