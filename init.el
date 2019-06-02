@@ -186,24 +186,3 @@
 
 ;; return follow links
 (setq org-return-follows-link t)
-
-;;;; org-ref
-;;(setq reftex-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"))
-;;
-;;;; see org-ref for use of these variables
-;;(setq org-ref-bibliography-notes "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/notes.org"
-;;      org-ref-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib")
-;;      org-ref-pdf-directory "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/pdf-dir/")
-;;
-;;(setq bibtex-completion-bibliography "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"
-;;      bibtex-completion-library-path "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/pdf-dir"
-;;      bibtex-completion-notes-path "~/OneDrive/Workspace/Version-Controlled/Bibliography-git/helm-bibtex-notes")
-;;
-;;;; open pdf with system pdf viewer (works on mac)
-;;(setq bibtex-completion-pdf-open-function
-;;  (lambda (fpath)
-;;    (start-process "open" "*open*" "open" fpath)))
-;;
-;;(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
-;;
-;;(require 'org-ref)
