@@ -182,7 +182,23 @@
 (set-frame-font "monospace-10" nil t)
 
 ;; load dracula theme
-(load-theme 'doom-nord t)
+;;(load-theme 'doom-nord t)
 
 ;; return follow links
 (setq org-return-follows-link t)
+
+;; ewal
+(require 'ewal)
+(when (ewal-load-wal-colors)
+  (custom-set-faces
+   `(line-number ((t (:foreground ,(ewal-get-color 'magenta 4)))))))
+
+;; spacemacs/user-init
+(add-to-list 'load-path "~/projects/ewal")
+(add-to-list 'load-path "~/projects/ewal/spacemacs-themes")
+(require 'ewal-spacemacs-themes)
+(load-theme 'ewal-spacemacs-modern t)
+;; spacemacs/user-init
+(add-to-list 'load-path "~/projects/ewal/evil-cursors")
+(require 'ewal-evil-cursors)
+(ewal-evil-cursors-get-spacemacs-colors :apply t)
