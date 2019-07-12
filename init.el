@@ -192,11 +192,16 @@
 (set-frame-font "monospace-9" nil t)
 
 ;; load dracula theme
+<<<<<<< HEAD
 (load-theme 'doom-one t)
+=======
+;;(load-theme 'doom-nord t)
+>>>>>>> a1213a7c4e1bd84d7102f3009e2bd1e22dfab87f
 
 ;; return follow links
 (setq org-return-follows-link t)
 
+<<<<<<< HEAD
 ;;;; org-ref
 ;;(setq reftex-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"))
 ;;
@@ -377,3 +382,20 @@ RELACÃO DE PLACAS
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+=======
+;; ewal
+(require 'ewal)
+(when (ewal-load-wal-colors)
+  (custom-set-faces
+   `(line-number ((t (:foreground ,(ewal-get-color 'magenta 4)))))))
+
+;; spacemacs/user-init
+(add-to-list 'load-path "~/projects/ewal")
+(add-to-list 'load-path "~/projects/ewal/spacemacs-themes")
+(require 'ewal-spacemacs-themes)
+(load-theme 'ewal-spacemacs-modern t)
+;; spacemacs/user-init
+(add-to-list 'load-path "~/projects/ewal/evil-cursors")
+(require 'ewal-evil-cursors)
+(ewal-evil-cursors-get-spacemacs-colors :apply t)
+>>>>>>> a1213a7c4e1bd84d7102f3009e2bd1e22dfab87f
