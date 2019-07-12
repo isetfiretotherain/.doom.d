@@ -178,30 +178,17 @@
 ;;      company-minimum-prefix-length 3)
 
 ;; todo states in org-mode
-(setq org-todo-keywords
-      '(;(sequence "TODO(t!)" "WAIT(w@/!)" "|" "DONE(d!)" "CANCELED(c@)")
-        (sequence "FAZER(f!) "|" FEITO (F!)")
-        (sequence "ABERTO(a!) ESPERA(e@/!)" "ENCAMINHAR(n@/!)" "|" "CANCELADO(n@/!)"))
-      )
-
-(setq org-todo-keyword-faces
-      '(("FAZER" . "orange") ("FEITO" . "green") ("ABERTO" . "yellow") ("ESPERA" . "orange red") ("ENCAMINHAR" . "blue") ("CANCELADO" . "red"))
-      )
 
 ;; font
 (set-frame-font "monospace-9" nil t)
 
 ;; load dracula theme
-<<<<<<< HEAD
 (load-theme 'doom-one t)
-=======
 ;;(load-theme 'doom-nord t)
->>>>>>> a1213a7c4e1bd84d7102f3009e2bd1e22dfab87f
 
 ;; return follow links
 (setq org-return-follows-link t)
 
-<<<<<<< HEAD
 ;;;; org-ref
 ;;(setq reftex-default-bibliography '("~/OneDrive/Workspace/Version-Controlled/Bibliography-git/references.bib"))
 ;;
@@ -376,26 +363,18 @@ RELACÃO DE PLACAS
      (sequence "ABERTO(a)" "ESPERA(e)" "ENCAMINHAR(n)" "|" "FEITO(F)" "CANCELADO(c)")
      (sequence "LOJA(l)" "FORA(f)" "MANUTENCAO(m)" "SERVICO(s)" "|"  "VENDIDO(v)"))))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-=======
 ;; ewal
-(require 'ewal)
-(when (ewal-load-wal-colors)
-  (custom-set-faces
-   `(line-number ((t (:foreground ,(ewal-get-color 'magenta 4)))))))
-
-;; spacemacs/user-init
-(add-to-list 'load-path "~/projects/ewal")
-(add-to-list 'load-path "~/projects/ewal/spacemacs-themes")
-(require 'ewal-spacemacs-themes)
-(load-theme 'ewal-spacemacs-modern t)
-;; spacemacs/user-init
-(add-to-list 'load-path "~/projects/ewal/evil-cursors")
-(require 'ewal-evil-cursors)
-(ewal-evil-cursors-get-spacemacs-colors :apply t)
->>>>>>> a1213a7c4e1bd84d7102f3009e2bd1e22dfab87f
+;;(require 'ewal)
+;;(when (ewal-load-wal-colors)
+;;  (custom-set-faces
+;;   `(line-number ((t (:foreground ,(ewal-get-color 'magenta 4)))))))
+;;
+;;;; spacemacs/user-init
+;;(add-to-list 'load-path "~/projects/ewal")
+;;(add-to-list 'load-path "~/projects/ewal/spacemacs-themes")
+;;(require 'ewal-spacemacs-themes)
+;;(load-theme 'ewal-spacemacs-modern t)
+;;;; spacemacs/user-init
+;;(add-to-list 'load-path "~/projects/ewal/evil-cursors")
+;;(require 'ewal-evil-cursors)
+;;(ewal-evil-cursors-get-spacemacs-colors :apply t)
