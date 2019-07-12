@@ -2,4 +2,4 @@
 
 ;; Place your private configuration here
 ;; spacemacs/user-config
-(enable-theme 'ewal-spacemacs-modern)
+;;(enable-theme 'ewal-spacemacs-modern)

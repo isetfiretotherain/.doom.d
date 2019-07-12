@@ -170,9 +170,9 @@
 (setq-default word-wrap t)
 
 ;; company autocomplete
-(setq global-company-mode t
-      company-idle-delay 0
-      company-minimum-prefix-length 3)
+;;(setq global-company-mode t
+;;      company-idle-delay 0
+;;      company-minimum-prefix-length 3)
 
 ;; todo states in org-mode
 (setq org-todo-keywords
@@ -182,23 +182,23 @@
 (set-frame-font "monospace-10" nil t)
 
 ;; load dracula theme
-;;(load-theme 'doom-nord t)
+(load-theme 'doom-one t)
 
 ;; return follow links
 (setq org-return-follows-link t)
 
 ;; ewal
-(require 'ewal)
-(when (ewal-load-wal-colors)
-  (custom-set-faces
-   `(line-number ((t (:foreground ,(ewal-get-color 'magenta 4)))))))
+;;(require 'ewal)
+;;(when (ewal-load-wal-colors)
+;;  (custom-set-faces
+;;   `(line-number ((t (:foreground ,(ewal-get-color 'magenta 4)))))))
 
 ;; spacemacs/user-init
-(add-to-list 'load-path "~/projects/ewal")
-(add-to-list 'load-path "~/projects/ewal/spacemacs-themes")
-(require 'ewal-spacemacs-themes)
-(load-theme 'ewal-spacemacs-modern t)
-;; spacemacs/user-init
-(add-to-list 'load-path "~/projects/ewal/evil-cursors")
-(require 'ewal-evil-cursors)
-(ewal-evil-cursors-get-spacemacs-colors :apply t)
+;;(add-to-list 'load-path "~/projects/ewal")
+;;(add-to-list 'load-path "~/projects/ewal/spacemacs-themes")
+;;(require 'ewal-spacemacs-themes)
+;;(load-theme 'ewal-spacemacs-modern t)
+;;;; spacemacs/user-init
+;;(add-to-list 'load-path "~/projects/ewal/evil-cursors")
+;;(require 'ewal-evi -cursors)
+;;(ewal-evil-cursors-get-spacemacs-colors :apply t)
