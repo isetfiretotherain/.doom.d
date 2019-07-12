@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: Informacoes Tecnicas
+# key: carro
+# --
+
+:PROPERTIES:
+:PLACA:
+:RENAVAM:
+:MARCA:
+:MODELO:
+:ANO-FAB:
+:ANO-MOD:
+:KM:
+:COR:
+:FIPE-ID:
+:FIPE-DATE:
+:FIPE-VAL:
+:VALOR:
+:END:
