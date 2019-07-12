@@ -1,0 +1,30 @@
+# -*- mode: snippet -*-
+# name: compra-marc8
+# key: compra
+# --
+
+:PROCESSO:
+- [/] =doc= Servićo de Despachante
+  - [ ] =doc= Procuraćão Marc-8 - Bismarque
+  - [ ] =doc= Credencial CRDD - Bismarque
+- [/] =doc= Documentos - Marc-8
+  - [ ] =doc= Contrato Social/JCDF - Marc-8
+  - [ ] =doc= Cópia CNH - Mariana
+  - [ ] =doc= CNPJ - Marc-8
+- [/] =doc= Documentos - vendedor
+  - [ ] =doc= Contrato Social - vendedor
+  - [ ] =doc= Cópia Procuraćão/CNH - vendedor
+  - [ ] =doc= Certidão Negativa de Débitos - vendedor
+  - [ ] =doc= Cópia CNPJ - vendedor
+- [ ] =doc= Nota fiscal
+- [/] =doc= DUT preenchido
+  - [ ] =doc= DUT - comprador
+  - [ ] =doc= DUT - vendedor
+- [/] =doc=  Outros documentos
+- [ ] =tax= Débitos
+- [ ] =sis= Restrićões
+- [ ] =tax= Cadastro de transferência
+- [ ] =sis= Triagem no Detran
+- [ ] =doc= Emissão de CRV
+- [ ] =doc= Pronto para arquivamento
+:END:

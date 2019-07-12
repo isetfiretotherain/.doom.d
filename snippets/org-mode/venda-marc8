@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: venda-marc8
+# key: venda
+# --
+
+- [ ] =ass= Autorizaćão de servićo
+- [ ] =doc= Cópia CNH - Comprador
+- [ ] =doc= Cópia JCDF - Marc8
+- [ ] =doc= DUT - comprador
+- [ ] =doc= DUT - vendedor
+- [ ] =tax= Débitos
+- [ ] =tax= Taxa de Agendamento
+- [ ] =doc= Agendamento
+- [ ] =doc= Slip de Vistoria
+- [ ] =doc= Cadastro de transferência
+- [ ] =doc= Emissão de CRV

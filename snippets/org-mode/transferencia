@@ -1,0 +1,33 @@
+# -*- mode: snippet -*-
+# name: transferencia-geral
+# key: transferencia         
+# --
+
+:PROCESSO:
+- [ ] =doc= Autorizaćão de Servićo
+- [/] =doc= Servićo de Despachante
+  - [ ] =doc= Procuraćão Marc-8 - Bismarque
+  - [ ] =doc= Credencial CRDD - Bismarque
+- [/] =doc= Documentos - comprador
+  - [ ] =doc= Contrato Social - comprador
+  - [ ] =doc= Cópia Procuraćão - comprador
+  - [ ] =doc= Cópia CNH - comprador
+  - [ ] =doc= CNPJ - comprador
+- [/] =doc= Documentos - vendedor
+  - [ ] =doc= Contrato Social - vendedor
+  - [ ] =doc= Cópia Procuraćão/CNH - vendedor
+  - [ ] =doc= Certidão Negativa de Débitos - vendedor
+  - [ ] =doc= Cópia CNPJ - vendedor
+- [ ] =doc= Nota fiscal
+- [/] =doc= DUT preenchido
+  - [ ] =doc= DUT - comprador
+  - [ ] =doc= DUT - vendedor
+- [/] =doc=  Outros documentos
+- [ ] =tax= Débitos
+- [ ] =sis= Restrićões
+- [ ] =doc= Slip de vistoria
+- [ ] =tax= Cadastro de transferência
+- [ ] =sis= Triagem no Detran
+- [ ] =doc= Emissão de CRV
+- [ ] =doc= Pronto para arquivamento
+:END:
