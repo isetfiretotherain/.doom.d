@@ -51,3 +51,27 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+
+(use-package org-roam
+  :hook (after-init . org-roam-mode)
+
+  :config
+  (setq org-roam-directory "~/org-roam")
+
+  (map!
+   "C-c n l" #'org-roam
+   "C-c n t" #'org-roam-today
+   "C-c n f" #'org-roam-find-file
+   "C-c n i" #'org-roam-insert
+   "C-c n g" #'org-roam-show-graph
+   )
+  )
+
+(use-package org-journal
+  :bind
+  ("C-c n j" . org-journal-new-entry)
+  :custom
+  (org-journal-date-prefix "#+TITLE: ")
+  (org-journal-file-format "%Y-%m-%d.org")
+  (org-journal-dir "~/org-roam")
+  (org-journal-date-format "%A, %d de %B de %Y"))

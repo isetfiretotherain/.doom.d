@@ -53,16 +53,3 @@
 (package! org-roam
   :recipe (:host github :repo "jethrokuan/org-roam" :branch "develop"))
 
-(use-package! org-roam
-  :hook (after-init . org-roam-mode)
-  :config
-  (setq org-roam-directory "~/repositories/org/roam")
-
-  (map!
-   "C-c n l" #'org-roam
-   "C-c n t" #'org-roam-today
-   "C-c n f" #'org-roam-find-file
-   "C-c n i" #'org-roam-insert
-   "C-c n g" #'org-roam-show-graph
-   )
-  )
