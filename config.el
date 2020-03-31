@@ -35,7 +35,7 @@
 (setq calendar-longitude -47.92)
 (require 'theme-changer)
 (change-theme 'modus-operandi 'modus-vivendi)
-(add-to-list 'load-path "~/.doom.d/themes/theme-changer")
+(add-to-list 'load-path "~/.doom.d/theme-changer")
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
