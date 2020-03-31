@@ -19,16 +19,38 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Fira Code" :size 13))
+(setq doom-font (font-spec :family "Jetbrains Mono" :size 14))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-solarized-light)
+;; (setq doom-theme 'doom-solarized-light)
+;; (setq doom-theme 'modus-operandi)
+;; (setq doom-theme 'modus-operandi)
+;;
+
+;; Setting a theme changer based on location. The package needs to be installed with `package-install' first.
+(setq calendar-location-name "Brasília, DF")
+(setq calendar-latitude -15.77)
+(setq calendar-longitude -47.92)
+(require 'theme-changer)
+(change-theme 'modus-operandi 'modus-vivendi)
+(add-to-list 'load-path "~/.doom.d/themes/theme-changer")
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/repositories/org/")
+(setq org-directory "~/org-roam")
+
+;; Deft provides a nice interface for browsing and filtering org-roam notes.
+(use-package deft
+  :after org
+  :bind
+  ("C-c n d" . deft)
+  :custom
+  (deft-recursive t)
+  (deft-use-filter-string-for-filename t)
+  (deft-default-extension "org")
+  (deft-directory "~/org-roam"))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -75,3 +97,5 @@
   (org-journal-file-format "%Y-%m-%d.org")
   (org-journal-dir "~/org-roam")
   (org-journal-date-format "%A, %d de %B de %Y"))
+
+(setq centaur-tabs-style "bar")
