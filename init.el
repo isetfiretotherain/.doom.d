@@ -173,16 +173,9 @@
        :app
        ;;calendar
        ;;irc               ; how neckbeards socialize
-       ;;(rss +org)        ; emacs as an RSS reader
+       ;;(rss +org)        ; emacs as an RSS reader (elfeed)
        ;;twitter           ; twitter client https://twitter.com/vnought
 
        :config
        literate
        (default +bindings +smartparens))
-
-
-
-;; set visual line mode for org files
-;; (with-eval-after-load 'org
-;;   (setq org-startup-indented t) ; Enable `org-indent-mode' by default
-;;   (add-hook 'org-mode-hook #'visual-line-mode))

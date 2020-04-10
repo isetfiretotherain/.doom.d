@@ -1,9 +1,13 @@
 # -*- mode: snippet -*-
 # name: org-roam-metadata-book
-# key: livro
+# key: -book
 # --
 
+#+startup: overview
 - Metadata ::
   - Autor :: $0
   - Status ::
   - Tags ::
+
+* Ideias
+* Destaques
