@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# name: Nova distro
+# uuid:
+# key: -distro
+# condition: t
+# --
+
+** Nova distro
+- Tags :: Nome da distro
+- versão ::
+- host :: [[file:20200405132032-macbookpro_9_2_1_0.org][MacBookPro 9,2 1.0]]
+- kernel :: 5.3.0-45-generic
+- packages ::
+- DE ::
+- WM ::
+- Data ::
+*** Primeiros 30 dias
+**** TODO Experiência de instalação e sobre a primeira hora de uso (=SPC m s= +1h).
+**** Problemas ligados a hardware encontrados. Especificar a data de uso.
+**** Problemas ligados ao software.
+**** Problemas ligado a pacotes ou instalação de programas.
+**** Pontos que ficaram muito bons e deveriam ter em todas distribuições.
+**** Coisas que faria diferente mas que não incomodam.
+**** TODO Resumo da experiência e se existe algo que o faria trocar (=SPC m s= +30d).
+
+*** Uso continuado
+**** Problemas encontrados.
+**** Notícias de novas versões.

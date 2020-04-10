@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Tags
+# key: -t
+# --
+
+- Tags :: $0
