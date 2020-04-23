@@ -1,7 +1,7 @@
 (setq user-full-name "Lucas F. Aguiar"
       user-mail-address "lucas.fernandes.df@gmail.com")
 
-(setq doom-font (font-spec :family "JetBrains Mono" :size 14))
+(setq doom-font (font-spec :family "Roboto Mono Light" :size 14))
 
 ;; (setq doom-theme 'doom-solarized-light)
 ;; (setq doom-theme 'modus-operandi)
@@ -69,3 +69,10 @@
 (setq display-line-numbers-type relative)
 
 (setq centaur-tabs-style "bar")
+
+(modify-all-frames-parameters '((fullscreen . maximized)))
+
+(use-package telega
+  :load-path  "~/telega.el"
+  :commands (telega)
+  :defer t)

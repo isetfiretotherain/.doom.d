@@ -34,7 +34,7 @@ are the three important ones:
 They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 font string. You generally only need these two:
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "JetBrains Mono" :size 14))
+(setq doom-font (font-spec :family "Roboto Mono Light" :size 14))
 #+END_SRC
 * Doom-theme
 There are two ways to load a theme. Both assume the theme is installed and
@@ -126,4 +126,15 @@ numbers are disabled. For relative line numbers, set this to =relative=.
 * Centaur tabs
 #+BEGIN_SRC emacs-lisp
 (setq centaur-tabs-style "bar")
+#+END_SRC
+* Window size
+#+BEGIN_SRC emacs-lisp
+(modify-all-frames-parameters '((fullscreen . maximized)))
+#+END_SRC
+* Telega
+#+BEGIN_SRC emacs-lisp
+(use-package telega
+  :load-path  "~/telega.el"
+  :commands (telega)
+  :defer t)
 #+END_SRC
