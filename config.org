@@ -1,5 +1,5 @@
 #+title: Doom Emacs Configuration
-#+startup: nofold
+#+startup: fold
 
 Here are some additional functions/macros that could help you configure Doom:
 - =load!= for loading external =*.el= files relative to this one
@@ -131,10 +131,14 @@ numbers are disabled. For relative line numbers, set this to =relative=.
 #+BEGIN_SRC emacs-lisp
 (modify-all-frames-parameters '((fullscreen . maximized)))
 #+END_SRC
-* Telega
+* Line wrapping
+When a paragraph is filled just press =M-q= to break a long line paragraph.
 #+BEGIN_SRC emacs-lisp
-(use-package telega
-  :load-path  "~/telega.el"
-  :commands (telega)
-  :defer t)
+;; tw=60
+(setq-default fill-column 75)
+#+END_SRC
+* toc-org
+#+BEGIN_SRC emacs-lisp
+(require 'toc-org nil t)
+(add-hook 'org-mode-hook 'toc-org-mode)
 #+END_SRC

@@ -72,7 +72,8 @@
 
 (modify-all-frames-parameters '((fullscreen . maximized)))
 
-(use-package telega
-  :load-path  "~/telega.el"
-  :commands (telega)
-  :defer t)
+;; tw=60
+(setq-default fill-column 75)
+
+(require 'toc-org nil t)
+(add-hook 'org-mode-hook 'toc-org-mode)
