@@ -24,6 +24,10 @@ clients, file templates and snippets.
 (setq user-full-name "Lucas F. Aguiar"
       user-mail-address "lucas.fernandes.df@gmail.com")
 #+END_SRC
+* Added paths
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'exec-path "usr/bin/sqlite3")
+#+END_SRC
 * Doom-font
 Doom exposes five (optional) variables for controlling fonts in Doom. Here
 are the three important ones:
@@ -34,7 +38,7 @@ are the three important ones:
 They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 font string. You generally only need these two:
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "Roboto Mono Light" :size 14))
+(setq doom-font (font-spec :family "Roboto Mono Light" :size 16))
 #+END_SRC
 * Doom-theme
 There are two ways to load a theme. Both assume the theme is installed and
@@ -84,6 +88,7 @@ If you use =org= and don't want your org files in the default location below,
 change =org-directory=. It must be set before org loads!
 #+BEGIN_SRC emacs-lisp
 (use-package org-roam
+  :ensure t
   :hook (after-init . org-roam-mode)
 
   :config
@@ -94,7 +99,7 @@ change =org-directory=. It must be set before org loads!
    "C-c n t" #'org-roam-today
    "C-c n f" #'org-roam-find-file
    "C-c n i" #'org-roam-insert
-   "C-c n g" #'org-roam-show-graph
+   "C-c n g" #'org-roam-graph-show
    )
   )
 
@@ -116,6 +121,11 @@ change =org-directory=. It must be set before org loads!
   (deft-use-filter-string-for-filename t)
   (deft-default-extension "org")
   (deft-directory "~/org-roam"))
+#+END_SRC
+* Hide emphasis markers
+#+BEGIN_SRC emacs-lisp
+(setq org-hide-emphasis-markers t)
+
 #+END_SRC
 * Line numbers
 This determines the style of line numbers in effect. If set to =nil=, line
@@ -141,4 +151,21 @@ When a paragraph is filled just press =M-q= to break a long line paragraph.
 #+BEGIN_SRC emacs-lisp
 (require 'toc-org nil t)
 (add-hook 'org-mode-hook 'toc-org-mode)
+#+END_SRC
+* edit-server
+#+BEGIN_SRC emacs-lisp
+(when (and (daemonp) (require 'edit-server nil :noerror))
+  (edit-server-start))
+(add-hook 'edit-server-start-hook 'markdown-mode)
+#+END_SRC
+* org-pdftools org-noter
+#+BEGIN_SRC emacs-lisp
+(use-package org-noter
+  :config
+  ;; Your org-noter config ........
+  (require 'org-noter-pdftools))
+
+(use-package org-pdftools
+  :hook (org-mode . org-pdftools-setup-link))
+
 #+END_SRC
