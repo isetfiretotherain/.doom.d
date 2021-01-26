@@ -3,7 +3,7 @@
 
 (add-to-list 'exec-path "usr/bin/sqlite3")
 
-(setq doom-font (font-spec :family "Roboto Mono Light" :size 16))
+(setq doom-font (font-spec :family "Roboto Mono" :size 16))
 
 ;; (setq doom-theme 'doom-solarized-light)
 ;; (setq doom-theme 'modus-operandi)

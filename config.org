@@ -38,7 +38,7 @@ are the three important ones:
 They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 font string. You generally only need these two:
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "Roboto Mono Light" :size 16))
+(setq doom-font (font-spec :family "Roboto Mono" :size 16))
 #+END_SRC
 * Doom-theme
 There are two ways to load a theme. Both assume the theme is installed and
