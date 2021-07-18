@@ -51,5 +51,27 @@
 ;(package! builtin-package :recipe (:branch "develop"))
 
 (package! org-roam
-  :recipe (:host github :repo "jethrokuan/org-roam" :branch "develop"))
+  :recipe (:host github :repo "org-roam/org-roam" :branch "master"))
 
+(package! org-roam-server)
+
+(package! org-roam-bibtex
+  :recipe (:host github :repo "org-roam/org-roam-bibtex"))
+
+;; When using org-roam via the `+roam' flag
+(unpin! org-roam company-org-roam)
+(unpin! bibtex-completion helm-bibtex ivy-bibtex)
+
+(package! org-journal)
+
+(package! org-pdftools
+  :recipe (:host github :repo "fuxialexander/org-pdftools"))
+
+(package! org-ref
+  :recipe (:host github :repo "jkitchin/org-ref"))
+
+(package! org-noter
+  :recipe (:host github :repo "weirdNox/org-noter"))
+
+(package! org-noter-pdftools
+  :recipe (:host github :repo "fuxialexander/org-pdftools"))

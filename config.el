@@ -16,7 +16,7 @@
 (change-theme 'modus-operandi 'modus-vivendi)
 (add-to-list 'load-path "~/.doom.d/theme-changer")
 
-(setenv "BROWSER" "firefox")
+(setenv "BROWSER" "vivaldi")
 
 (setq org-directory "~/org-roam")
 (setq org-default-notes-file "~/org-roam/notes.org")
@@ -50,6 +50,24 @@
    )
   )
 
+(use-package! org-roam-bibtex
+  :after (org-roam)
+  :hook (org-roam-mode . org-roam-bibtex-mode)
+  :config
+  ;; (setq org-roam-server-host "172.16.3.168")
+  (setq orb-preformat-keywords
+   '("=key=" "title" "url" "file" "author-or-editor" "keywords"))
+  (setq orb-templates
+        '(("r" "ref" plain (function org-roam-capture--get-point)
+           ""
+           :file-name "${=key=}"
+           :head "#+TITLE: ${=key=}: ${title}
+#+ROAM_KEY: ${ref}
+#+ROAM_TAGS: article
+- tags ::"
+           :unnarrowed t)))
+
+(org-roam-bibtex-mode)
 (use-package org-journal
   :bind
   ("C-c n j" . org-journal-new-entry)
@@ -87,15 +105,43 @@
   (edit-server-start))
 (add-hook 'edit-server-start-hook 'markdown-mode)
 
-(use-package org-noter
-  :config
-  ;; Your org-noter config ........
-  (require 'org-noter-pdftools))
+;; (use-package org-noter
+;;   :config
+;;   ;; Your org-noter config ........
+;;   (require 'org-noter-pdftools))
 
 (use-package org-pdftools
   :hook (org-mode . org-pdftools-setup-link))
 
 (pdf-tools-install)
+
+(use-package! org-noter
+  :config
+  (setq
+   org-noter-pdftools-markup-pointer-color "yellow"
+   org-noter-notes-search-path '("~/org-roam")
+   ;; org-noter-insert-note-no-questions t
+   org-noter-doc-split-fraction '(0.7 . 03)
+   org-noter-always-create-frame nil
+   org-noter-hide-other nil
+   org-noter-pdftools-free-pointer-icon "Note"
+   org-noter-pdftools-free-pointer-color "red"
+   org-noter-kill-frame-at-session-end nil
+   )
+  (map! :map (pdf-view-mode)
+        :leader
+        (:prefix-map ("n" . "notes")
+          :desc "Write notes"                    "w" #'org-noter)
+        )
+  )
+
+(use-package! org-pdftools
+  :hook (org-load . org-pdftools-setup-link))
+(use-package! org-noter-pdftools
+  :after org-noter
+  :config
+  (with-eval-after-load 'pdf-annot
+    (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
 
 (use-package org-roam-server
   :ensure t

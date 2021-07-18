@@ -61,7 +61,7 @@ Setting a theme changer based on location. The package needs to be installed wit
 #+END_SRC
 * Org-mode
 #+BEGIN_SRC emacs-lisp
-(setenv "BROWSER" "firefox")
+(setenv "BROWSER" "vivaldi")
 
 (setq org-directory "~/org-roam")
 (setq org-default-notes-file "~/org-roam/notes.org")
@@ -86,7 +86,14 @@ Setting a theme changer based on location. The package needs to be installed wit
 * Org-roam org-journal deft
 If you use =org= and don't want your org files in the default location below,
 change =org-directory=. It must be set before org loads!
+
+If, for some reason, the =org-roam-directory= is not set correctly by the =setq=
+function, you can do it manually using =M-x set-variable= and then typing this
+variable and "~/org-roam" as the chosen folder.
+
 #+BEGIN_SRC emacs-lisp
+
+
 (use-package org-roam
   :ensure t
   :hook (after-init . org-roam-mode)
@@ -103,6 +110,24 @@ change =org-directory=. It must be set before org loads!
    )
   )
 
+(use-package! org-roam-bibtex
+  :after (org-roam)
+  :hook (org-roam-mode . org-roam-bibtex-mode)
+  :config
+  ;; (setq org-roam-server-host "172.16.3.168")
+  (setq orb-preformat-keywords
+   '("=key=" "title" "url" "file" "author-or-editor" "keywords"))
+  (setq orb-templates
+        '(("r" "ref" plain (function org-roam-capture--get-point)
+           ""
+           :file-name "${=key=}"
+           :head "#+TITLE: ${=key=}: ${title}
+#+ROAM_KEY: ${ref}
+#+ROAM_TAGS: article
+- tags ::"
+           :unnarrowed t)))
+
+(org-roam-bibtex-mode)
 (use-package org-journal
   :bind
   ("C-c n j" . org-journal-new-entry)
@@ -160,16 +185,43 @@ When a paragraph is filled just press =M-q= to break a long line paragraph.
 #+END_SRC
 * org-pdftools org-noter
 #+BEGIN_SRC emacs-lisp
-(use-package org-noter
-  :config
-  ;; Your org-noter config ........
-  (require 'org-noter-pdftools))
+;; (use-package org-noter
+;;   :config
+;;   ;; Your org-noter config ........
+;;   (require 'org-noter-pdftools))
 
 (use-package org-pdftools
   :hook (org-mode . org-pdftools-setup-link))
 
 (pdf-tools-install)
 
+(use-package! org-noter
+  :config
+  (setq
+   org-noter-pdftools-markup-pointer-color "yellow"
+   org-noter-notes-search-path '("~/org-roam")
+   ;; org-noter-insert-note-no-questions t
+   org-noter-doc-split-fraction '(0.7 . 03)
+   org-noter-always-create-frame nil
+   org-noter-hide-other nil
+   org-noter-pdftools-free-pointer-icon "Note"
+   org-noter-pdftools-free-pointer-color "red"
+   org-noter-kill-frame-at-session-end nil
+   )
+  (map! :map (pdf-view-mode)
+        :leader
+        (:prefix-map ("n" . "notes")
+          :desc "Write notes"                    "w" #'org-noter)
+        )
+  )
+
+(use-package! org-pdftools
+  :hook (org-load . org-pdftools-setup-link))
+(use-package! org-noter-pdftools
+  :after org-noter
+  :config
+  (with-eval-after-load 'pdf-annot
+    (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
 #+END_SRC
 * org-roam-server
 #+BEGIN_SRC emacs-lisp
